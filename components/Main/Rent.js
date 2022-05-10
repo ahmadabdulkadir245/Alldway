@@ -22,9 +22,10 @@ function Rent() {
         {Rents.map(
           ({
             id,
-            type,
+            purchase,
             localGov,
             bedrooms,
+            type,
             bathroom,
             kitchen,
             plot,
@@ -37,6 +38,7 @@ function Rent() {
                   <Card
                     id={id}
                     type={type}
+                    purchase={purchase}
                     localGov={localGov}
                     bedrooms={bedrooms}
                     bathroom={bathroom}

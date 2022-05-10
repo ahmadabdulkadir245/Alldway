@@ -11,11 +11,12 @@ function SingleProduct() {
   return (
     <div className='iceland'>
       <Header />
-      <div className='lg:mt-10 2xl:mt-16'>
+      <div className='mt-6 lg:mt-10 2xl:mt-16'>
         {Rents.map(
           ({
             id,
             type,
+            purchase,
             localGov,
             bedrooms,
             bathroom,
@@ -23,49 +24,102 @@ function SingleProduct() {
             plot,
             price,
             img,
+            description,
           }) => {
             if (id === productId) {
               return (
                 <div
                   key={id}
-                  className='grid grid-col md:grid-cols-2  gap-8  md:gap-x-8 lg:gap-x-10 gap-y-14 m-auto px-4 lg:px-0 max-w-6xl 2xl:max-w-8xl'
+                  className='grid grid-col md:grid-cols-2  gap-8  md:gap-x-8 lg:gap-x-10 gap-y-5 m-auto px-4 lg:px-0 max-w-6xl 2xl:max-w-8xl'
                 >
-                  <div>
+                  <div className='col-span-2 lg:col-span-1'>
                     <img
                       src={img}
-                      className='w-full h-[380px] 2xl:h-[500px]'
+                      className='w-full h-[380px] 2xl:h-[480px]'
                       alt='Single product img'
                     />
                   </div>
-                  <div>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Accusamus eius a, aspernatur ipsam amet vel voluptatum
-                      laboriosam impedit, sunt minus sed. Repellendus nam illum
-                      corporis reiciendis quis dignissimos numquam at facilis.
-                      Rem consequuntur totam harum vero reprehenderit vitae
-                      consequatur minus quia neque corrupti sapiente magni
-                      possimus id eius commodi placeat, alias ex tempora sint.
-                      Assumenda libero asperiores illum corporis voluptates
-                      inventore laudantium quod molestiae molestias minima
-                      necessitatibus architecto autem minus ipsam temporibus
-                      illo magnam, quam delectus voluptas quas earum optio
-                      voluptatibus animi ut. Quos laboriosam tenetur, magnam
-                      debitis corrupti fugiat molestiae deserunt itaque beatae
-                      dolor, obcaecati nam suscipit ducimus facere.
-                    </p>
+                  <div className='col-span-2 lg:col-span-1 py-2 px-4 lg:px-8 shadow-lg  bg-white'>
+                    <div className='flex justify-between'>
+                      <div>
+                        <h4 className='text-lg text-gray-500 p-1'>
+                          {purchase}
+                        </h4>
+                      </div>
+                      <div>
+                        <h4 className='text-lg text-gray-500 p-1'>{type}</h4>
+                      </div>
+                    </div>
+                    <h1 className='text-center text-3xl text-[#093158] my-4'>
+                      {localGov}
+                    </h1>
+                    <div className='flex justify-between my-5'>
+                      <div>
+                        <h4 className='text-lg text-[#093158] p-1'>
+                          BEDROOMS:{" "}
+                          <span className='text-yellow-500'> {bedrooms}</span>
+                        </h4>
+                      </div>
+                      <div>
+                        <h4 className='text-lg text-[#093158] p-1'>
+                          BATHROOMS:{" "}
+                          <span className='text-yellow-500'> {bathroom}</span>
+                        </h4>
+                      </div>
+                    </div>
+                    <div className='flex justify-between my-5'>
+                      <div>
+                        <h4 className='text-lg text-[#093158] p-1'>
+                          KITCHEN:{" "}
+                          <span className='text-yellow-500'>{kitchen} </span>
+                        </h4>
+                      </div>
+                      <div>
+                        <h4 className='text-lg text-[#093158] p-1'>
+                          BATHROOMS:{" "}
+                          <span className='text-yellow-500'> {bathroom} </span>
+                        </h4>
+                      </div>
+                    </div>
+                    <div className='flex justify-between my-5'>
+                      <div>
+                        <h4 className='text-lg text-[#093158] p-1'>
+                          PLOT:{" "}
+                          <span className='text-yellow-500'> {plot} </span>
+                        </h4>
+                      </div>
+                      <div>
+                        <h4 className='text-lg text-[#093158] p-1'>
+                          PRICE: N
+                          <span className='text-yellow-500'>{price}</span>
+                        </h4>
+                      </div>
+                    </div>
+
+                    <button className='flex justify-center m-auto mt-10 lg:mt-16  bg-[#ffcb05] w-56 rounded-md text-white  p-2 2xl:p-3 outline-none transition-all duration-300 ease-in-out hover:bg-yellow-500 2xl:w-[300px] mb-3'>
+                      PROCEED TO BUY
+                    </button>
                   </div>
+                  <h1 className='col-span-2 text-4xl text-center text-[#093158] mt-6'>
+                    PROPERTY <span className='text-[#ffcb05]'>DESCRIPTION</span>
+                  </h1>
+                  <hr className='text-gray-400 col-span-2  w-[95%] lg:w-[80%] m-auto' />
+                  <p className='text-[#093158] col-span-2 w-[95%] lg:w-[80%] m-auto px-2 lg:px-5 mb-4'>
+                    {description}
+                  </p>
                 </div>
               );
             }
           }
         )}
       </div>
-      <div className='grid grid-col md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8  md:gap-x-8 lg:gap-x-10 gap-y-14 m-auto'>
+
+      <div className='mt-6 lg:mt-10 2xl:mt-16'>
         {Sales.map(
           ({
             id,
             type,
+            purchase,
             localGov,
             bedrooms,
             bathroom,
@@ -73,48 +127,89 @@ function SingleProduct() {
             plot,
             price,
             img,
+            description,
           }) => {
             if (id === productId) {
               return (
-                <div key={id}>
-                  <div className='w-full  rounded-md overflow-hidden  cursor-pointer'>
+                <div
+                  key={id}
+                  className='grid grid-col md:grid-cols-2  gap-8  md:gap-x-8 lg:gap-x-10 gap-y-5 m-auto px-4 lg:px-0 max-w-6xl 2xl:max-w-8xl'
+                >
+                  <div className='col-span-2 lg:col-span-1'>
                     <img
-                      className='w-full h-[250px]'
                       src={img}
-                      alt='For rent image'
+                      className='w-full h-[380px] 2xl:h-[480px]'
+                      alt='Single product img'
                     />
-                    <div className=' text-[#093158] '>
-                      <h4 className='text-sm text-gray-400 p-1'>{type}</h4>
-                      <h2 className='text-lg text-semibold py-1  text-center'>
-                        {" "}
-                        {localGov}
-                      </h2>
-                      <div className='flex justify-between items-center px-4 py-[10px] text-sm'>
-                        <div>
-                          <p>Bed Rooms : {bedrooms}</p>
-                        </div>
-                        <div>
-                          <p>Bath Rooms: {bathroom}</p>
-                        </div>
+                  </div>
+                  <div className='col-span-2 lg:col-span-1 py-2 px-4 lg:px-8 shadow-lg  bg-white'>
+                    <div className='flex justify-between'>
+                      <div>
+                        <h4 className='text-lg text-gray-500 p-1'>
+                          {purchase}
+                        </h4>
                       </div>
-                      <div className='flex justify-between items-center px-4  py-[10px] text-sm'>
-                        <div>
-                          <p>Kitchen: {kitchen}</p>
-                        </div>
-                        <div>
-                          <p>Plot: {plot}</p>
-                        </div>
-                      </div>
-                      <div className='flex justify-between items-center px-4  py-[10px] text-sm mb-4'>
-                        <div>
-                          <p> &#8358 {price} / Year</p>
-                        </div>
-                        <div>
-                          <HeartIcon className='h-5 text-[#ffcb05]' />
-                        </div>
+                      <div>
+                        <h4 className='text-lg text-gray-500 p-1'>{type}</h4>
                       </div>
                     </div>
+                    <h1 className='text-center text-3xl text-[#093158] my-4'>
+                      {localGov}
+                    </h1>
+                    <div className='flex justify-between my-5'>
+                      <div>
+                        <h4 className='text-lg text-[#093158] p-1'>
+                          BEDROOMS:{" "}
+                          <span className='text-yellow-500'> {bedrooms}</span>
+                        </h4>
+                      </div>
+                      <div>
+                        <h4 className='text-lg text-[#093158] p-1'>
+                          BATHROOMS:{" "}
+                          <span className='text-yellow-500'> {bathroom}</span>
+                        </h4>
+                      </div>
+                    </div>
+                    <div className='flex justify-between my-5'>
+                      <div>
+                        <h4 className='text-lg text-[#093158] p-1'>
+                          KITCHEN:{" "}
+                          <span className='text-yellow-500'>{kitchen} </span>
+                        </h4>
+                      </div>
+                      <div>
+                        <h4 className='text-lg text-[#093158] p-1'>
+                          BATHROOMS:{" "}
+                          <span className='text-yellow-500'> {bathroom} </span>
+                        </h4>
+                      </div>
+                    </div>
+                    <div className='flex justify-between my-5'>
+                      <div>
+                        <h4 className='text-lg text-[#093158] p-1'>
+                          PLOT:{" "}
+                          <span className='text-yellow-500'> {plot} </span>
+                        </h4>
+                      </div>
+                      <div>
+                        <h4 className='text-lg text-[#093158] p-1'>
+                          PRICE: N
+                          <span className='text-yellow-500'>{price}</span>
+                        </h4>
+                      </div>
+                    </div>
+
+                    <button className='flex justify-center m-auto mt-10 lg:mt-16  bg-[#ffcb05] w-56 rounded-md text-white  p-2 2xl:p-3 outline-none transition-all duration-300 ease-in-out hover:bg-yellow-500 2xl:w-[300px] mb-3'>
+                      PROCEED TO BUY
+                    </button>
                   </div>
+                  <h1 className='col-span-2 text-4xl text-center text-[#093158] mt-6'>
+                    PROPERTY <span className='text-[#ffcb05]'>DESCRIPTION</span>
+                  </h1>
+                  <hr className='text-gray-400 col-span-2  w-[95%] lg:w-[80%] m-auto' />
+                  <p className='text-[#093158] col-span-2 w-[95%] lg:w-[80%] m-auto px-2 lg:px-5 mb-4'>
+                    {description}
+                  </p>
                 </div>
               );
             }

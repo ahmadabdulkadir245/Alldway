@@ -6,6 +6,7 @@ import {
   SparklesIcon,
 } from "@heroicons/react/solid";
 import React from "react";
+import { MdAccountBalance, MdSpellcheck } from "react-icons/md";
 
 function Service() {
   return (
@@ -21,7 +22,7 @@ function Service() {
 
       <div className='grid grid-col md:grid-cols-2 lg:grid-cols-4    md:gap-x-8 gap-y-12 text-[#093158]'>
         <div className='lg:w-[250px] 2xl:w-[300px] text-center'>
-          <StarIcon className='h-12 w-24 text-[#ffcb05] m-auto' />
+          <MdAccountBalance className='h-12 w-24 text-[#ffcb05] m-auto' />
           <h3 className='text-xl my-3'>MORTGAGE FINANCE</h3>
           <p className='leading-7 text-left lg:text-sm 2xl:text-lg'>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor nihil
@@ -48,7 +49,7 @@ function Service() {
           </p>
         </div>
         <div className='lg:w-[250px] 2xl:w-[300px] text-center'>
-          <BookmarkAltIcon className='h-12 w-24 text-[#ffcb05] m-auto' />
+          <MdSpellcheck className='h-12 w-24 text-[#ffcb05] m-auto' />
           <h3 className='text-xl my-3'>EXPRIENCED AGENTS</h3>
           <p className='leading-7 text-left lg:text-sm 2xl:text-lg'>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor nihil

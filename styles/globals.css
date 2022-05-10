@@ -11,6 +11,9 @@
   .iceland {
     font-family: iceland;
   }
+  .center-height {
+    height: calc(100vh - 72px);
+  }
   .h-80p {
     height: 80vh;
   }

@@ -9,8 +9,7 @@ import {
 } from "@heroicons/react/solid";
 import { useRouter } from "next/router";
 import React from "react";
-import Colors from "../../constants/colors";
-
+import { FaFacebook, FaTwitter, FaInstagram, FaWhatsapp } from "react-icons/fa";
 function TopNavigation() {
   const router = useRouter();
   const signOut = () => {
@@ -36,12 +35,16 @@ function TopNavigation() {
             <p>Logout</p>
           </div>
           <div className='flex space-x-6'>
-            <HomeIcon className={`h-5 hover:text-[#ffcb05]   cursor-pointer`} />
-            <FastForwardIcon
+            <FaFacebook
               className={`h-5 hover:text-[#ffcb05]   cursor-pointer`}
             />
-            <GiftIcon className={`h-5 hover:text-[#ffcb05]   cursor-pointer`} />
-            <HashtagIcon
+            <FaTwitter
+              className={`h-5 hover:text-[#ffcb05]   cursor-pointer`}
+            />
+            <FaInstagram
+              className={`h-5 hover:text-[#ffcb05]   cursor-pointer`}
+            />
+            <FaWhatsapp
               className={`h-5 hover:text-[#ffcb05]   cursor-pointer`}
             />
           </div>

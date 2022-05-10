@@ -6,7 +6,7 @@ import { addToBasket } from "../../slices/basketSlice";
 
 function Card({
   id,
-  type,
+  purchase,
   localGov,
   bedrooms,
   bathroom,
@@ -14,6 +14,7 @@ function Card({
   plot,
   price,
   img,
+  type,
 }) {
   const dispatch = useDispatch();
   const [heartColor, setHeartColor] = useState("#ffcb05");
@@ -21,7 +22,7 @@ function Card({
   const addPropertyToBasket = () => {
     const property = {
       id,
-      type,
+      purchase,
       localGov,
       bedrooms,
       bathroom,
@@ -38,7 +39,7 @@ function Card({
       <div className='w-full  rounded-md overflow-hidden  cursor-pointer'>
         <img className='w-full h-[250px]' src={img} alt='For rent image' />
         <div className=' text-[#093158] '>
-          <h4 className='text-sm text-gray-400 p-1'>{type}</h4>
+          <h4 className='text-sm text-gray-400 p-1'>{purchase}</h4>
           <h2 className='text-lg text-semibold py-1  text-center'>
             {" "}
             {localGov}
@@ -61,13 +62,10 @@ function Card({
           </div>
           <div className='flex justify-between items-center px-4  py-[10px] text-sm mb-4'>
             <div>
-              <p> &#8358 {price} / Year</p>
+              <p>{type}</p>
             </div>
             <div>
-              <HeartIcon
-                className={`h-5 text-[${heartColor}]`}
-                onClick={addPropertyToBasket}
-              />
+              <p> N{price} / Year</p>
             </div>
           </div>
         </div>

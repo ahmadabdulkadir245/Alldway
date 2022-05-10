@@ -13,7 +13,7 @@ function Agents() {
       t-1 m-auto bg-[#ffcb05] w-32 h-[2px] mb-12'
       ></div>
 
-      <div className='grid grid-col md:grid-cols-2 lg:grid-cols-4 gap-10'>
+      <div className='grid grid-col md:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-14'>
         <AgentCard
           img={"/Agents/IMG-20211003-WA0003.jpg"}
           role={"Manager"}

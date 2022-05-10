@@ -2,6 +2,7 @@ export const Sales = [
   {
     id: (Date.now() * Math.random() * 12).toString(),
     type: "House",
+    purchase: "Buy",
     img: "/15.jpg",
     localGov: "KATSINA",
     bedrooms: 3,
@@ -9,10 +10,13 @@ export const Sales = [
     kitchen: 1,
     plot: 1,
     price: 150000,
+    description:
+      "orem ipsum dolor sit amet consectetur adipisicing elit Perferendis voluptates amet animi tempora enim itaqu Perferendis voluptates amet animi tempora enim itaque expedita iusto magni praesentium maiores cumque quam eumorem ipsum dolor sit amet consectetur adipisicing elit Perferendis voluptates amet animi tempora enim itaqu Perferendis voluptates amet animi tempora enim itaque expedita iusto magni praesentium maiores cumque quam eum orem ipsum dolor sit amet consectetur adipisicing elit Perferendis voluptates amet animi tempora enim itaqu Perferendis voluptates amet animi tempora enim itaque expedita iusto magni praesentium maiores cumque quam eum",
   },
   {
     id: (Date.now() * Math.random() * 13).toString(),
     type: "House",
+    purchase: "Buy",
     img: "/17.jpg",
     localGov: "DAN MUSA",
     bedrooms: 4,
@@ -20,10 +24,13 @@ export const Sales = [
     kitchen: 2,
     plot: 1,
     price: 120000,
+    description:
+      "orem ipsum dolor sit amet consectetur adipisicing elit Perferendis voluptates amet animi tempora enim itaqu Perferendis voluptates amet animi tempora enim itaque expedita iusto magni praesentium maiores cumque quam eumorem ipsum dolor sit amet consectetur adipisicing elit Perferendis voluptates amet animi tempora enim itaqu Perferendis voluptates amet animi tempora enim itaque expedita iusto magni praesentium maiores cumque quam eum orem ipsum dolor sit amet consectetur adipisicing elit Perferendis voluptates amet animi tempora enim itaqu Perferendis voluptates amet animi tempora enim itaque expedita iusto magni praesentium maiores cumque quam eum",
   },
   {
     id: (Date.now() * Math.random() * 14).toString(),
     type: "House",
+    purchase: "Buy",
     img: "/16.jpg",
     localGov: "MALUMFASHI",
     bedrooms: 2,
@@ -31,10 +38,13 @@ export const Sales = [
     kitchen: 1,
     plot: 2,
     price: 180000,
+    description:
+      "orem ipsum dolor sit amet consectetur adipisicing elit Perferendis voluptates amet animi tempora enim itaqu Perferendis voluptates amet animi tempora enim itaque expedita iusto magni praesentium maiores cumque quam eumorem ipsum dolor sit amet consectetur adipisicing elit Perferendis voluptates amet animi tempora enim itaqu Perferendis voluptates amet animi tempora enim itaque expedita iusto magni praesentium maiores cumque quam eum orem ipsum dolor sit amet consectetur adipisicing elit Perferendis voluptates amet animi tempora enim itaqu Perferendis voluptates amet animi tempora enim itaque expedita iusto magni praesentium maiores cumque quam eum",
   },
   {
     id: (Date.now() * Math.random() * 15).toString(),
     type: "House",
+    purchase: "Buy",
     img: "/12.jpg",
     localGov: "DAURA",
     bedrooms: 4,
@@ -42,10 +52,13 @@ export const Sales = [
     kitchen: 2,
     plot: 3,
     price: 250000,
+    description:
+      "orem ipsum dolor sit amet consectetur adipisicing elit Perferendis voluptates amet animi tempora enim itaqu Perferendis voluptates amet animi tempora enim itaque expedita iusto magni praesentium maiores cumque quam eumorem ipsum dolor sit amet consectetur adipisicing elit Perferendis voluptates amet animi tempora enim itaqu Perferendis voluptates amet animi tempora enim itaque expedita iusto magni praesentium maiores cumque quam eum orem ipsum dolor sit amet consectetur adipisicing elit Perferendis voluptates amet animi tempora enim itaqu Perferendis voluptates amet animi tempora enim itaque expedita iusto magni praesentium maiores cumque quam eum",
   },
   {
     id: (Date.now() * Math.random() * 15).toString(),
     type: "House",
+    purchase: "Buy",
     img: "/18.jpg",
     localGov: "ZANGO",
     bedrooms: 2,
@@ -53,10 +66,13 @@ export const Sales = [
     kitchen: 1,
     plot: 3,
     price: 220000,
+    description:
+      "orem ipsum dolor sit amet consectetur adipisicing elit Perferendis voluptates amet animi tempora enim itaqu Perferendis voluptates amet animi tempora enim itaque expedita iusto magni praesentium maiores cumque quam eumorem ipsum dolor sit amet consectetur adipisicing elit Perferendis voluptates amet animi tempora enim itaqu Perferendis voluptates amet animi tempora enim itaque expedita iusto magni praesentium maiores cumque quam eum orem ipsum dolor sit amet consectetur adipisicing elit Perferendis voluptates amet animi tempora enim itaqu Perferendis voluptates amet animi tempora enim itaque expedita iusto magni praesentium maiores cumque quam eum",
   },
   {
     id: (Date.now() * Math.random() * 15).toString(),
     type: "House",
+    purchase: "Buy",
     img: "/13.jpg",
     localGov: "DAN JA",
     bedrooms: 5,
@@ -64,10 +80,13 @@ export const Sales = [
     kitchen: 2,
     plot: 1,
     price: 150000,
+    description:
+      "orem ipsum dolor sit amet consectetur adipisicing elit Perferendis voluptates amet animi tempora enim itaqu Perferendis voluptates amet animi tempora enim itaque expedita iusto magni praesentium maiores cumque quam eumorem ipsum dolor sit amet consectetur adipisicing elit Perferendis voluptates amet animi tempora enim itaqu Perferendis voluptates amet animi tempora enim itaque expedita iusto magni praesentium maiores cumque quam eum orem ipsum dolor sit amet consectetur adipisicing elit Perferendis voluptates amet animi tempora enim itaqu Perferendis voluptates amet animi tempora enim itaque expedita iusto magni praesentium maiores cumque quam eum",
   },
   {
     id: (Date.now() * Math.random() * 15).toString(),
     type: "House",
+    purchase: "Buy",
     img: "/31.jpg",
     localGov: "FASKARI",
     bedrooms: 4,
@@ -75,10 +94,13 @@ export const Sales = [
     kitchen: 2,
     plot: 1,
     price: 150000,
+    description:
+      "orem ipsum dolor sit amet consectetur adipisicing elit Perferendis voluptates amet animi tempora enim itaqu Perferendis voluptates amet animi tempora enim itaque expedita iusto magni praesentium maiores cumque quam eumorem ipsum dolor sit amet consectetur adipisicing elit Perferendis voluptates amet animi tempora enim itaqu Perferendis voluptates amet animi tempora enim itaque expedita iusto magni praesentium maiores cumque quam eum orem ipsum dolor sit amet consectetur adipisicing elit Perferendis voluptates amet animi tempora enim itaqu Perferendis voluptates amet animi tempora enim itaque expedita iusto magni praesentium maiores cumque quam eum",
   },
   {
     id: (Date.now() * Math.random() * 15).toString(),
     type: "House",
+    purchase: "Buy",
     img: "/15.jpg",
     localGov: "MUSAWA",
     bedrooms: 3,
@@ -86,5 +108,7 @@ export const Sales = [
     kitchen: 2,
     plot: 1,
     price: 150000,
+    description:
+      "orem ipsum dolor sit amet consectetur adipisicing elit Perferendis voluptates amet animi tempora enim itaqu Perferendis voluptates amet animi tempora enim itaque expedita iusto magni praesentium maiores cumque quam eumorem ipsum dolor sit amet consectetur adipisicing elit Perferendis voluptates amet animi tempora enim itaqu Perferendis voluptates amet animi tempora enim itaque expedita iusto magni praesentium maiores cumque quam eum orem ipsum dolor sit amet consectetur adipisicing elit Perferendis voluptates amet animi tempora enim itaqu Perferendis voluptates amet animi tempora enim itaque expedita iusto magni praesentium maiores cumque quam eum",
   },
 ];

@@ -13,7 +13,6 @@ export default function Home() {
   useEffect(() => {
     const accessToken = userAccessToken();
     if (!accessToken) return router.push("/login");
-
     const [userInfo] = fetchUser();
     setUser(userInfo);
   }, []);
