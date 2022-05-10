@@ -47,7 +47,7 @@ function Rent() {
                   />
                 </div>
               </Link>
-              <button className='flex justify-center m-auto mt-5 lg:mt-10  bg-[#ffcb05] w-30 rounded-md text-white  p-2 2xl:p-3 outline-none transition-all duration-300 ease-in-out hover:bg-yellow-500 2xl:w-[300px]'>
+              <button className='flex justify-center m-auto mt-5 lg:mt-10  bg-[#ffcb05]  rounded-md text-white  p-2 2xl:p-3 outline-none transition-all duration-300 ease-in-out hover:bg-yellow-500 w-full'>
                 Add To Cart
               </button>
             </div>

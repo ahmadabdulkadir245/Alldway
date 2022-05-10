@@ -7,5 +7,6 @@ module.exports = {
       "jsonplaceholder.com",
       "www.pikpng.com",
     ],
+    optimizeFonts: false,
   },
 };
