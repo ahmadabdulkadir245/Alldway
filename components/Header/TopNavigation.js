@@ -7,10 +7,16 @@ import {
   LockClosedIcon,
   UserIcon,
 } from "@heroicons/react/solid";
+import { useRouter } from "next/router";
 import React from "react";
 import Colors from "../../constants/colors";
 
 function TopNavigation() {
+  const router = useRouter();
+  const signOut = () => {
+    localStorage.clear();
+    router.push("/login");
+  };
   return (
     <div
       className={`hidden lg:flex justify-center bg-[#093158] h-10 iceland   items-center text-xl  p-6 text-white`}
@@ -22,7 +28,10 @@ function TopNavigation() {
             <UserIcon className='h-6' />
             <p>Profile</p>
           </div>
-          <div className={`flex hover:text-[#ffcb05] cursor-pointer `}>
+          <div
+            className={`flex hover:text-[#ffcb05] cursor-pointer `}
+            onClick={signOut}
+          >
             <LockClosedIcon className='h-6' />
             <p>Logout</p>
           </div>

@@ -6,14 +6,8 @@ import {
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { addToBasket, selectItems } from "../../slices/basketSlice";
 function Navigation() {
-  const router = useRouter();
-  const signOut = () => {
-    localStorage.clear();
-    router.push("/login");
-  };
   const items = useSelector(selectItems);
 
   return (
