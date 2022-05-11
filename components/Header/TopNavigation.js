@@ -18,7 +18,7 @@ function TopNavigation() {
   };
   return (
     <div
-      className={`hidden lg:flex justify-center bg-[#093158] h-10 iceland   items-center text-xl  p-6 text-white`}
+      className={`hidden lg:flex justify-center bg-[#093158] h-10 iceland   items-center text-xl  p-6 text-white iceland`}
     >
       <div className='flex max-w-6xl 2xl:max-w-8xl w-full justify-between items-center '>
         <div className=''>(+234)-812-333-444</div>

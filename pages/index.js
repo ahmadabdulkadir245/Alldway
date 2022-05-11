@@ -22,7 +22,6 @@ export default function Home() {
       <Head>
         <title>AllDWay Real Estate</title>
       </Head>
-      <Header />
       <Main />
 
       <Footer />

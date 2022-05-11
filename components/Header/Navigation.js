@@ -23,7 +23,7 @@ function Navigation() {
     <>
       <SideBar close={close} openSideBar={openSideBar} />
       <div
-        className={`w-full h-10 py-9 px-4  md:px-8  lg:px-0 text-[#093158}] flex justify-center items-center shadow-md`}
+        className={`w-full h-10 py-9 px-4  md:px-8  lg:px-0 text-[#093158}] flex justify-center items-center shadow-md iceland`}
       >
         {" "}
         <div className='flex  justify-between items-center max-w-6xl 2xl:max-w-8xl  w-full'>
