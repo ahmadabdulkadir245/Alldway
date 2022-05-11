@@ -22,9 +22,7 @@ function Navigation() {
   };
 
   const accessToken = userAccessToken();
-  if (!accessToken) {
-    return <NotSignedInNav />;
-  }
+
   return (
     <>
       <SideBar close={close} openSideBar={openSideBar} />
