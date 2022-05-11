@@ -8,7 +8,6 @@ import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
 import { addToBasket, selectItems } from "../../slices/basketSlice";
 import SideBar from "./SideBar";
-import { userAccessToken } from "../../Util/fetchUserDetails";
 import NotSignedInNav from "./NotSignedInNav";
 function Navigation() {
   const items = useSelector(selectItems);
@@ -20,8 +19,6 @@ function Navigation() {
   const close = () => {
     setOpenSideBar(false);
   };
-
-  const accessToken = userAccessToken();
 
   return (
     <>
