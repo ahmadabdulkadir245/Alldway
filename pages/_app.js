@@ -18,7 +18,7 @@ function App({ Component, pageProps: { session, ...pageProps } }) {
     <AuthContextProvider>
       <PropertyContextProvider>
         <Provider store={store}>
-          <Header />
+          {/* <Header /> */}
           <Component {...pageProps} />
         </Provider>
       </PropertyContextProvider>
