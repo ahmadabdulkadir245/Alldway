@@ -10,7 +10,7 @@ function AddProperty() {
     type: "",
     bedrooms: "",
     bathrooms: "",
-    kitchens: "",j
+    kitchens: "",
     plot: "",
     img: "",
     description: "",
@@ -26,15 +26,6 @@ function AddProperty() {
   const [price, setPrice] = useState("");
   const [img, setImg] = useState("");
   const [description, setDescription] = useState("");
-
-  // const localGovhandler = (e) => {
-  //   e.preventDefault();
-  //   setAddProperty(e.target.value);
-  // };
-  // const addressHandler = (e) => {
-  //   e.preventDefault();
-  //   setAddress(e.target.value);
-  // };
 
   const newInputHandler = (e) => {
     e.preventDefault();
