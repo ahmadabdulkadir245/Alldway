@@ -1,11 +1,13 @@
 import Image from "next/image";
 import React from "react";
 import { HeartIcon } from "@heroicons/react/solid";
-import { Sales } from "../../data/sale";
 import Link from "next/link";
 import { addToBasket } from "../../slices/basketSlice";
+import { Properties } from "../../data/properties";
+import Card from "./Card";
 
-function Rent() {
+function Sale() {
+  const Sales = Properties.filter((property) => property.purchase === "Buy");
   return (
     <div className='mt-20 max-w-6xl 2xl:max-w-8xl  px-4 md:px-4 lg:px-0 m-auto'>
       <h1 className='text-4xl text-[#093158] text-center'>
@@ -29,48 +31,21 @@ function Rent() {
             plot,
             price,
             img,
+            purchase,
           }) => (
             <div key={id}>
-              <Link href={`products/${id.toString()}`}>
-                <div className='w-full  rounded-md overflow-hidden  cursor-pointer'>
-                  <img
-                    className='w-full h-[250px]'
-                    src={img}
-                    alt='For rent image'
-                  />
-                  <div className=' text-[#093158] '>
-                    <h4 className='text-sm text-gray-400 p-1'>{type}</h4>
-                    <h2 className='text-lg text-semibold py-1  text-center'>
-                      {" "}
-                      {localGov}
-                    </h2>
-                    <div className='flex justify-between items-center px-4 py-[10px] text-sm'>
-                      <div>
-                        <p>Bed Rooms : {bedrooms}</p>
-                      </div>
-                      <div>
-                        <p>Bath Rooms: {bathroom}</p>
-                      </div>
-                    </div>
-                    <div className='flex justify-between items-center px-4  py-[10px] text-sm'>
-                      <div>
-                        <p>Kitchen: {kitchen}</p>
-                      </div>
-                      <div>
-                        <p>Plot: {plot}</p>
-                      </div>
-                    </div>
-                    <div className='flex justify-between items-center px-4  py-[10px] text-sm mb-4'>
-                      <div>
-                        <p> &#8358 {price} </p>
-                      </div>
-                      <div>
-                        <HeartIcon className='h-5 text-[#ffcb05]' />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Link>
+              <Card
+                id={id}
+                type={type}
+                purchase={purchase}
+                localGov={localGov}
+                bedrooms={bedrooms}
+                bathroom={bathroom}
+                kitchen={kitchen}
+                plot={plot}
+                price={price}
+                img={img}
+              />
             </div>
           )
         )}
@@ -82,4 +57,4 @@ function Rent() {
   );
 }
 
-export default Rent;
+export default Sale;

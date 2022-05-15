@@ -1,5 +1,3 @@
-import React from "react";
-
 function SearchProperty() {
   return (
     <div className='  bg-[#093158] py-10 px-4 md:px-8 lg:px-0 '>

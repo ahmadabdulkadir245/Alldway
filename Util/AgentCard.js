@@ -6,7 +6,7 @@ function AgentCard({ name, role, img, number }) {
       <div className='text-center mx-12 rounded-md overflow-hidden mb-8'>
         <img
           src={img}
-          className='w-full h-[200px] lg:h-[300px] object-contain'
+          className='w-full h-[300px] lg:h-[300px] object-contain'
           alt=''
         />
         <div className='bg-[#093158] text-white py-4 relative'>

@@ -1,5 +1,4 @@
-import { HeartIcon } from "@heroicons/react/solid";
-import { Link } from "heroicons-react";
+import Link from "next/link";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addToBasket } from "../../slices/basketSlice";
@@ -17,7 +16,7 @@ function Card({
   type,
 }) {
   const dispatch = useDispatch();
-  const [heartColor, setHeartColor] = useState("#ffcb05");
+  const [selectedHomeButtonColor, setSelectedHomeButtonColor] = useState(false);
 
   const addPropertyToBasket = () => {
     const property = {
@@ -32,12 +31,18 @@ function Card({
       img,
     };
     dispatch(addToBasket(property));
-    setHeartColor("#ff0505");
+    setSelectedHomeButtonColor(true);
   };
+
   return (
     <div>
-      <div className='w-full  rounded-md overflow-hidden  cursor-pointer'>
-        <img className='w-full h-[250px]' src={img} alt='For rent image' />
+      <div className='w-full  rounded-md overflow-hidden '>
+        <Link href={`products/${id.toString()}`}>
+          <a>
+            {" "}
+            <img className='w-full h-[250px]' src={img} alt='For rent image ' />
+          </a>
+        </Link>
         <div className=' text-[#093158] '>
           <h4 className='text-sm text-gray-400 p-1'>{purchase}</h4>
           <h2 className='text-lg text-semibold py-1  text-center'>
@@ -70,6 +75,14 @@ function Card({
           </div>
         </div>
       </div>
+      <button
+        className={`flex justify-center m-auto mt-5 lg:mt-10  bg-[#ffcb05]  rounded-md text-white  p-2 2xl:p-3 outline-none transition-all duration-300 ease-in-out hover:bg-yellow-500  w-full ${
+          selectedHomeButtonColor && "bg-yellow-500"
+        }`}
+        onClick={addPropertyToBasket}
+      >
+        SAVE HOME
+      </button>
     </div>
   );
 }

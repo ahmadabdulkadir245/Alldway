@@ -1,18 +1,28 @@
 import "../styles/globals.css";
 import "tailwindcss/tailwind.css";
-import { SessionProvider } from "next-auth/react";
 import { store } from "../app/store";
 import { Provider } from "react-redux";
 import Header from "../components/Header";
+import AuthContextProvider from "../context/auth-context";
+import PropertyContextProvider from "../context/property-context";
 
 function App({ Component, pageProps: { session, ...pageProps } }) {
-  return (
-    <SessionProvider session={session}>
-      <Provider store={store}>
-        <Header />
+  if (Component.getLayout) {
+    return Component.getLayout(
+      <AuthContextProvider>
         <Component {...pageProps} />
-      </Provider>
-    </SessionProvider>
+      </AuthContextProvider>
+    );
+  }
+  return (
+    <AuthContextProvider>
+      <PropertyContextProvider>
+        <Provider store={store}>
+          <Header />
+          <Component {...pageProps} />
+        </Provider>
+      </PropertyContextProvider>
+    </AuthContextProvider>
   );
 }
 

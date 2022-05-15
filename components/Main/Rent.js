@@ -1,12 +1,13 @@
 import Image from "next/image";
-import React from "react";
-import { HeartIcon } from "@heroicons/react/solid";
-import HouseCard from "../../Util/HouseCard";
-import { Rents } from "../../data/rent";
+import React, { useContext } from "react";
+import { Properties } from "../../data/properties";
 import Link from "next/link";
 import Card from "./Card";
+import { PropertyContext } from "../../context/property-context";
 
 function Rent() {
+  const propertyCtx = useContext(PropertyContext);
+  const Rents = Properties.filter((property) => property.purchase === "Rent");
   return (
     <div className='mt-20 max-w-6xl 2xl:max-w-8xl  px-4 md:px-4 lg:px-0  m-auto'>
       <h1 className='text-4xl text-[#093158] text-center'>
@@ -33,25 +34,18 @@ function Rent() {
             img,
           }) => (
             <div key={id}>
-              <Link href={`products/${id.toString()}`}>
-                <div>
-                  <Card
-                    id={id}
-                    type={type}
-                    purchase={purchase}
-                    localGov={localGov}
-                    bedrooms={bedrooms}
-                    bathroom={bathroom}
-                    kitchen={kitchen}
-                    plot={plot}
-                    price={price}
-                    img={img}
-                  />
-                </div>
-              </Link>
-              <button className='flex justify-center m-auto mt-5 lg:mt-10  bg-[#ffcb05]  rounded-md text-white  p-2 2xl:p-3 outline-none transition-all duration-300 ease-in-out hover:bg-yellow-500 w-full'>
-                Add To Cart
-              </button>
+              <Card
+                id={id}
+                type={type}
+                purchase={purchase}
+                localGov={localGov}
+                bedrooms={bedrooms}
+                bathroom={bathroom}
+                kitchen={kitchen}
+                plot={plot}
+                price={price}
+                img={img}
+              />
             </div>
           )
         )}

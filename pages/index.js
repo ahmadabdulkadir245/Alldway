@@ -11,10 +11,13 @@ export default function Home() {
   const [user, setUser] = useState({});
 
   useEffect(() => {
-    const accessToken = userAccessToken();
-    if (!accessToken) return router.push("/login");
-    const [userInfo] = fetchUser();
-    setUser(userInfo);
+    async function authenticate() {
+      const accessToken = await userAccessToken();
+      if (!accessToken) return router.push("/");
+      const [userInfo] = await fetchUser();
+      setUser(userInfo);
+    }
+    authenticate();
   }, []);
 
   return (
@@ -22,8 +25,8 @@ export default function Home() {
       <Head>
         <title>AllDWay Real Estate</title>
       </Head>
+      {/* <Header /> */}
       <Main />
-
       <Footer />
     </div>
   );
