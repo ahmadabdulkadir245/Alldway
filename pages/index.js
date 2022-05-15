@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Header from "../components/Header";
 import Main from "../components/Main/";
 import Footer from "../components/Footer/";
 import { userAccessToken, fetchUser } from "../Util/fetchUserDetails";
@@ -25,7 +24,6 @@ export default function Home() {
       <Head>
         <title>AllDWay Real Estate</title>
       </Head>
-      {/* <Header /> */}
       <Main />
       <Footer />
     </div>

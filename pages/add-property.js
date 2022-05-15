@@ -10,7 +10,7 @@ function AddProperty() {
     type: "",
     bedrooms: "",
     bathrooms: "",
-    kitchens: "",
+    kitchens: "",j
     plot: "",
     img: "",
     description: "",
