@@ -4,17 +4,27 @@ import { useDispatch } from "react-redux";
 import { addPropertyToDb } from "../slices/productSlice";
 
 function AddProperty() {
-  const [inputValues, setInputValues] = useState({
-    localGov: "",
-    address: "",
-    type: "",
-    bedrooms: "",
-    bathrooms: "",
-    kitchens: "",
-    plot: "",
-    img: "",
-    description: "",
-  });
+  // const [inputValues, setInputValues] = useState({
+  //   localGov: "",
+  //   address: "",
+  //   type: "",
+  //   bedrooms: "",
+  //   bathrooms: "",
+  //   kitchens: "",
+  //   plot: "",
+  //   img: "",
+  //   description: "",
+  // });
+
+  // const inputChangeHandler = (inputIdentifier, e) => {
+  //   e.preventDefault();
+  //   setInputValues((currentInputValues) => {
+  //     return {
+  //       ...currentInputValues,
+  //       [inputIdentifier]: e.target.value,
+  //     };
+  //   });
+  // };
   const [addProperty, setAddProperty] = useState([]);
   const [localGov, setLocalGov] = useState("");
   const [address, setAddress] = useState("");
@@ -39,16 +49,6 @@ function AddProperty() {
     ]);
   };
 
-  const inputChangeHandler = (inputIdentifier, e) => {
-    e.preventDefault();
-    setInputValues((currentInputValues) => {
-      return {
-        ...currentInputValues,
-        [inputIdentifier]: e.target.value,
-      };
-    });
-  };
-
   const dispatch = useDispatch();
   const addNewPropertyToBasket = () => {
     const property = {
@@ -59,14 +59,13 @@ function AddProperty() {
       bedrooms,
       bathrooms,
       kitchens,
-      plot,
       img,
       price,
+      plot,
       description,
     };
     dispatch(addPropertyToDb(property));
     alert(`Property added successfully`);
-    console.log(property);
   };
 
   return (
