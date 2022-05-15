@@ -1,8 +1,6 @@
 import Image from "next/image";
 import { useSelector } from "react-redux";
-import Header from "../components/Header";
 import SavedHome from "../components/Main/SavedHome";
-import { Properties } from "../data/properties";
 import { selectItems } from "../slices/basketSlice";
 function SavedHomes() {
   const savedHomes = useSelector(selectItems);
