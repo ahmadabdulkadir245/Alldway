@@ -1,7 +1,4 @@
-import {
-  HomeIcon,
-  MenuAlt1Icon,
-} from "@heroicons/react/solid";
+import { HomeIcon, MenuAlt1Icon } from "@heroicons/react/solid";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import Link from "next/link";
@@ -18,10 +15,6 @@ function Navigation() {
   const close = () => {
     setOpenSideBar(false);
   };
-  const [scroll, setScroll] = useState(false);
-  const scrollHandler = () => {
-    setScroll(true);
-  };
 
   return (
     <>
@@ -29,7 +22,7 @@ function Navigation() {
       <div
         className={`w-full h-10 py-9 px-4  md:px-8  lg:px-0 text-[#093158}] flex justify-center items-center ${
           !openSideBar ? "shadow-xl" : ""
-        } iceland fixed bg-white fixed top-0  z-50`}
+        } iceland fixed bg-white  z-50`}
       >
         {" "}
         <div className='flex  justify-between items-center max-w-6xl 2xl:max-w-8xl  w-full '>
