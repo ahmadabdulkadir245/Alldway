@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { Properties } from "../data/properties";
 
 const initialState = {
-  properties: [],
+  properties: Properties,
 };
 // The Global store setup
 export const propertySlice = createSlice({
@@ -13,23 +14,32 @@ export const propertySlice = createSlice({
     },
     removePropertyFromDb: (state, action) => {
       const index = state.properties.findIndex(
-        (basketItem) => basketItem.id === action.payload.id
+        (property) => property.id === action.payload.id
       );
-      let newBasket = [...state.properties];
+      let newProperties = [...state.properties];
       if (index >= 0) {
         // the item exists in the basket and remove it
-        newBasket.splice(index, 1);
+        newProperties.splice(index, 1);
       } else {
         console.warn(
           `Can't remove product (id: ${action.payload.id}) as its not in `
         );
       }
-      state.properties = newBasket;
+      state.properties = newProperties;
+    },
+    updateProperty: (state, action) => {
+      const index = state.properties.findIndex(
+        (property) => property.id === action.payload.id
+      );
+      let newProperties = [...state.properties];
+      newProperties[index] = action.payload.updatedProperty;
+      state.properties = newProperties;
     },
   },
 });
 
-export const { addPropertyToDb, removePropertyFromDb } = propertySlice.actions;
+export const { addPropertyToDb, removePropertyFromDb, updateProperty } =
+  propertySlice.actions;
 // selectors this is how to pull information from the global scope
 export const selectedProperties = (state) => state.property.properties;
 export const selectTotal = (state) =>

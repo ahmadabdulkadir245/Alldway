@@ -5,7 +5,6 @@ import { selectedProperties } from "../slices/productSlice";
 
 function Properties() {
   const newProperties = useSelector(selectedProperties);
-  console.log(newProperties);
 
   return (
     <div className='mt-24 text-4xl'>

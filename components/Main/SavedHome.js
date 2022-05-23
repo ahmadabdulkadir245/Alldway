@@ -26,10 +26,10 @@ function SavedHome({
       <Image src={img} width={200} height={200} objectFit='contain' />
       {/* <img
         src={img}
-        className='w-full md:w-[200px] h-[200px] px-4 '
+        className='w-full  h-[200px] md:h-[100px] px-4 '
         alt='saved home image'
       /> */}
-      <div className='col-span-3 mx-5'>
+      <div className='col-span-3 mx-3'>
         <div className='flex justify-between items-center mt-6'>
           <div>
             <p>{localGov}</p>
@@ -41,17 +41,15 @@ function SavedHome({
           </div>
         </div>
         <div className='flex '>
-          <p className='text-xs text-[#093158]'>
+          <p className='text-md text-[#093158]'>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
             aliquid expedita, vitae unde tempora cum dicta pariatur sequi ex
             magnam? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Veritatis aliquid expedita, vitae unde tempora cum dicta pariatur
-            sequi ex magnam?
           </p>
         </div>
         {/* <CurrencyDollar quantity={price} currency='GBP' /> */}
       </div>
-      <div className='flex flex-col space-y-2 my-auto justify-center px-5 md:px-0 md:justify-self-end text-white '>
+      <div className='flex flex-col space-y-2 my-auto justify-center px-3 md:px-0 md:justify-self-end text-white text-xl'>
         <Link href={`products/${id.toString()}`}>
           <a>
             {" "}

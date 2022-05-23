@@ -33,7 +33,7 @@ function SingleProduct() {
                 <div className='col-span-2 lg:col-span-1'>
                   <img
                     src={img}
-                    className='w-full h-[380px] 2xl:h-[480px]'
+                    className='w-full h-[250px] lg:h-[380px] 2xl:h-[480px]'
                     alt='Single product img'
                   />
                 </div>
@@ -94,7 +94,7 @@ function SingleProduct() {
                     PROCEED TO BUY
                   </button>
                 </div>
-                <h1 className='col-span-2 text-4xl text-center text-[#093158] mt-6'>
+                <h1 className='col-span-2 text-3xl lg:text-4xl text-center text-[#093158] mt-6'>
                   PROPERTY <span className='text-[#ffcb05]'>DESCRIPTION</span>
                 </h1>
                 <hr className='text-gray-400 col-span-2  w-[95%] lg:w-[80%] m-auto' />

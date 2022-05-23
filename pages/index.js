@@ -12,7 +12,7 @@ export default function Home() {
   useEffect(() => {
     async function authenticate() {
       const accessToken = await userAccessToken();
-      if (!accessToken) return router.push("/login");
+      if (!accessToken) return router.push("/");
       const [userInfo] = await fetchUser();
       setUser(userInfo);
     }

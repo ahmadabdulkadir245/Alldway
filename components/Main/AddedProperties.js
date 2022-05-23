@@ -2,7 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { removeFromBasket } from "../../slices/basketSlice";
+import {
+  removePropertyFromDb,
+  updateProperty,
+} from "../../slices/productSlice";
 import { selectedProperties } from "../../slices/productSlice";
 
 function AddedProperties({
@@ -16,14 +19,30 @@ function AddedProperties({
   type,
   img,
   price,
+  description,
 }) {
   const newProperty = useSelector(selectedProperties);
-  console.log(newProperty);
   const dispatch = useDispatch();
-  const removeItemFromBasket = () => {
+  const removePropertyFromDatabase = () => {
     // remove the item from redux
-    dispatch(removeFromBasket({ id }));
+    dispatch(removePropertyFromDb({ id }));
   };
+
+  // const updatePropertyHandler = () => {
+  //   const updatedProperty = {
+  //     localGov: "Dubai",
+  //     address: "million city",
+  //     kitchens: 2,
+  //     bedrooms: 8,
+  //     bathrooms: 7,
+  //     plot: 6,
+  //     type: "Apartment",
+  //     img: "/1.jpg",
+  //     price: 15000000,
+  //     description: "I am the new description",
+  //   };
+  //   dispatch(updateProperty({ id, updatedProperty }));
+  // };
 
   return (
     <div className='grid grid-cols-1 md:grid-cols-5 my-6 iceland '>
@@ -46,31 +65,31 @@ function AddedProperties({
         </div>
         <div className='flex '>
           <p className='text-xs text-[#093158]'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
+            {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
             aliquid expedita, vitae unde tempora cum dicta pariatur sequi ex
             magnam? Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Veritatis aliquid expedita, vitae unde tempora cum dicta pariatur
-            sequi ex magnam?
+            sequi ex magnam? */}
+            {description}
           </p>
         </div>
         {/* <CurrencyDollar quantity={price} currency='GBP' /> */}
       </div>
       <div className='flex flex-col space-y-2 my-auto justify-center px-5 md:px-0 md:justify-self-end text-white '>
-        <Link href={`products/${id.toString()}`}>
-          <a>
-            {" "}
-            <button className='button mt-auto bg-[#ffcb05] hover:bg-[#ffcb05] w-full'>
-              Go To Product
-            </button>
-          </a>
+        {" "}
+        <Link href={`/update-property/${id}`}>
+          <button className='button mt-auto bg-[#ffcb05] hover:bg-[#ffcb05] w-full'>
+            Update Property
+          </button>
         </Link>
         <button
           className='button mt-auto hover:bg-[#ffcb05]'
-          onClick={removeItemFromBasket}
+          onClick={removePropertyFromDatabase}
         >
           Remove from Basket
         </button>
       </div>
+      <Link href='/add-property'>Go to add property</Link>
     </div>
   );
 }

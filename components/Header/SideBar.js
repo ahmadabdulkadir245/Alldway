@@ -106,12 +106,12 @@ function SideBar({ openSideBar, close }) {
               </Link>
             </div>
             <div className='transition-transform duration-500 ease-in-out  translate-x-0'>
-              <Link href='/testApp '>
+              <Link href='/add-property '>
                 <a
                   className='hover:text-[#ffcb05]  transition-colors duration-300'
                   onClick={() => close()}
                 >
-                  Contact us
+                  Add Property
                 </a>
               </Link>
             </div>

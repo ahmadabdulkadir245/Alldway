@@ -1,5 +1,5 @@
 import { HomeIcon, MenuAlt1Icon } from "@heroicons/react/solid";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { useSelector } from "react-redux";
 import Link from "next/link";
 import { selectItems } from "../../slices/basketSlice";
@@ -8,6 +8,8 @@ import { MdClear } from "react-icons/md";
 
 function Navigation() {
   const items = useSelector(selectItems);
+  const [topToZero, setTopToZero] = useState(false);
+
   const [openSideBar, setOpenSideBar] = useState(false);
   const open = () => {
     setOpenSideBar(true);
@@ -16,13 +18,24 @@ function Navigation() {
     setOpenSideBar(false);
   };
 
+  // const navScrollHandler = useCallback(() => {
+  //   if (window.scrollY === 50) {
+  //     setTopToZero(true);
+  //   } else {
+  //     setTopToZero(false);
+  //   }
+  // }, [setTopToZero, window.scrollY]);
+
   return (
     <>
       <SideBar close={close} openSideBar={openSideBar} />
       <div
         className={`w-full h-10 py-9 px-4  md:px-8  lg:px-0 text-[#093158}] flex justify-center items-center ${
           !openSideBar ? "shadow-xl" : ""
-        } iceland fixed bg-white  z-50`}
+        } iceland fixed top-0  ${
+          !topToZero ? "lg:top-0" : "lg:top-[48px]"
+        } bg-white  z-50`}
+        // onScroll={navScrollHandler}
       >
         {" "}
         <div className='flex  justify-between items-center max-w-6xl 2xl:max-w-8xl  w-full '>

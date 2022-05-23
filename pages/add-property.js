@@ -4,27 +4,6 @@ import { useDispatch } from "react-redux";
 import { addPropertyToDb } from "../slices/productSlice";
 
 function AddProperty() {
-  // const [inputValues, setInputValues] = useState({
-  //   localGov: "",
-  //   address: "",
-  //   type: "",
-  //   bedrooms: "",
-  //   bathrooms: "",
-  //   kitchens: "",
-  //   plot: "",
-  //   img: "",
-  //   description: "",
-  // });
-
-  // const inputChangeHandler = (inputIdentifier, e) => {
-  //   e.preventDefault();
-  //   setInputValues((currentInputValues) => {
-  //     return {
-  //       ...currentInputValues,
-  //       [inputIdentifier]: e.target.value,
-  //     };
-  //   });
-  // };
   const [addProperty, setAddProperty] = useState([]);
   const [localGov, setLocalGov] = useState("");
   const [address, setAddress] = useState("");
@@ -35,6 +14,8 @@ function AddProperty() {
   const [plot, setPlot] = useState("");
   const [price, setPrice] = useState("");
   const [img, setImg] = useState("");
+  const [purchase, setPurchase] = useState("");
+
   const [description, setDescription] = useState("");
 
   const newInputHandler = (e) => {
@@ -50,6 +31,7 @@ function AddProperty() {
   };
 
   const dispatch = useDispatch();
+
   const addNewPropertyToBasket = () => {
     const property = {
       id: (Date.now() * Math.random() * 12).toString(),
@@ -62,9 +44,20 @@ function AddProperty() {
       img,
       price,
       plot,
+      purchase,
       description,
     };
     dispatch(addPropertyToDb(property));
+    setLocalGov("");
+    setAddress("");
+    setBedrooms("");
+    setBathrooms("");
+    setDescription("");
+    setImg("");
+    setPlot("");
+    setPrice("");
+    setPurchase("");
+    setKitchens("");
     alert(`Property added successfully`);
   };
 
@@ -82,6 +75,7 @@ function AddProperty() {
               placeholder='Local Government'
               className='w-full border-[2px] border-[#093158] p-2 rounded-md outline-none'
               onChange={(e) => setLocalGov(e.target.value)}
+              value={localGov}
             />
           </div>
           <div className='col-span-4 md:col-span-4 lg:col-span-4'>
@@ -90,15 +84,27 @@ function AddProperty() {
               placeholder='Address'
               className='w-full border-[2px] border-[#093158] p-2 rounded-md outline-none'
               onChange={(e) => setAddress(e.target.value)}
+              value={address}
             />
           </div>
-          <div className='col-span-4 md:col-span-4 lg:col-span-4'>
+          <div className='col-span-4 md:col-span-2 lg:col-span-2'>
             <select
               className='w-full border-[2px] border-[#093158] py-3 px-2  rounded-md outline-none text-[#093158]'
               onChange={(e) => setType(e.target.value)}
+              value={type}
             >
               <option className=''>Apartment</option>
               <option className='text-[#093158]'>House</option>
+            </select>
+          </div>
+          <div className='col-span-4 md:col-span-2 lg:col-span-2'>
+            <select
+              className='w-full border-[2px] border-[#093158] py-3 px-2  rounded-md outline-none text-[#093158]'
+              onChange={(e) => setPurchase(e.target.value)}
+              value={purchase}
+            >
+              <option className=''>Rent</option>
+              <option className='text-[#093158]'>Sale</option>
             </select>
           </div>
           <div className='col-span-2 md:col-span-2 lg:col-span-1'>
@@ -107,6 +113,7 @@ function AddProperty() {
               placeholder='Bedrooms'
               className='w-full border-[2px] border-[#093158] p-2 rounded-md outline-none'
               onChange={(e) => setBedrooms(e.target.value)}
+              value={bedrooms}
             />
           </div>
           <div className='col-span-2 md:col-span-2 lg:col-span-1'>
@@ -115,6 +122,7 @@ function AddProperty() {
               placeholder='Bathrooms'
               className='w-full border-[2px] border-[#093158] p-2 rounded-md outline-none'
               onChange={(e) => setBathrooms(e.target.value)}
+              value={bathrooms}
             />
           </div>
           <div className='col-span-2 md:col-span-2 lg:col-span-1'>
@@ -123,6 +131,7 @@ function AddProperty() {
               placeholder='Kitchen'
               className='w-full border-[2px] border-[#093158] p-2 rounded-md outline-none'
               onChange={(e) => setKitchens(e.target.value)}
+              value={kitchens}
             />
           </div>
           <div className='col-span-2 md:col-span-2 lg:col-span-1'>
@@ -131,6 +140,7 @@ function AddProperty() {
               placeholder='Plot'
               className='w-full border-[2px] border-[#093158] p-2 rounded-md outline-none'
               onChange={(e) => setPlot(e.target.value)}
+              value={plot}
             />
           </div>
           <div className='col-span-2 md:col-span-2 lg:col-span-2'>
@@ -139,6 +149,7 @@ function AddProperty() {
               placeholder='price'
               className='w-full border-[2px] border-[#093158] p-2 rounded-md outline-none'
               onChange={(e) => setPrice(e.target.value)}
+              value={price}
             />
           </div>
           <div className='col-span-2 md:col-span-2 lg:col-span-2'>
@@ -147,6 +158,7 @@ function AddProperty() {
               placeholder='House Image'
               className='w-full border-[2px] border-[#093158] p-2 rounded-md outline-none'
               onChange={(e) => setImg(e.target.value)}
+              value={img}
             />
           </div>
           <div className='col-span-4 md:col-span-4 lg:col-span-4 h-[200px]'>
@@ -154,6 +166,7 @@ function AddProperty() {
               className='w-full h-full border-[2px] border-[#093158] p-2 rounded-md outline-none'
               placeholder='Description'
               onChange={(e) => setDescription(e.target.value)}
+              value={description}
             ></textarea>
           </div>
         </div>

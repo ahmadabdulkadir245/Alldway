@@ -4,6 +4,19 @@ import SavedHome from "../components/Main/SavedHome";
 import { selectItems } from "../slices/basketSlice";
 function SavedHomes() {
   const savedHomes = useSelector(selectItems);
+  if (savedHomes.length === 0) {
+    return (
+      <div className='iceland mt-28 m-auto w-[95%] lg:max-w-5xl text-[#093158]'>
+        <h1 className='text-4xl text-center md:text-left '>
+          SAVED <span className='text-[#ffcb05]'>HOMES</span>
+        </h1>
+        <hr className='w-[86%] m-auto md:w-full h-[2px] bg-[#093158]    ' />
+        <p className='text-[#093158] text-center text-3xl mt-4'>
+          No Homes Have Been Saved
+        </p>
+      </div>
+    );
+  }
   return (
     <div className='iceland'>
       <div className='mt-28 m-auto w-[95%] lg:max-w-5xl text-[#093158]'>
