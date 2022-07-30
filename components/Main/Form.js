@@ -3,8 +3,17 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectedProperties, updateProperty } from "../../slices/productSlice";
-
+import { getDatabase, ref, onValue } from "firebase/database";
 function Form() {
+  // firebase start
+
+  // const db = getDatabase();
+  // const starCountRef = ref(db, "posts/" + postId + "/starCount");
+  // onValue(starCountRef, (snapshot) => {
+  //   const data = snapshot.val();
+  //   updateStarCount(postElement, data);
+  // });
+  // firebase end
   const properties = useSelector(selectedProperties);
   const router = useRouter();
   const updateId = router.query.updatePropertyId;
@@ -12,7 +21,6 @@ function Form() {
     (update) => update.id === updateId
   );
 
-  // new use state
   const [inputs, setInputs] = useState({
     localGov: {
       value: updatePropertyDetails ? updatePropertyDetails.localGov : "",

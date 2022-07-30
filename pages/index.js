@@ -9,15 +9,12 @@ export default function Home() {
   const router = useRouter();
   const [user, setUser] = useState({});
 
-  useEffect(() => {
-    async function authenticate() {
-      const accessToken = await userAccessToken();
-      if (!accessToken) return router.push("/");
-      const [userInfo] = await fetchUser();
-      setUser(userInfo);
-    }
-    authenticate();
-  }, []);
+  // useEffect(() => {
+  //   let token = sessionStorage.getItem("Token");
+  //   if (!token) {
+  //     router.push("/login");
+  //   }
+  // }, []);
 
   return (
     <div className='iceland'>

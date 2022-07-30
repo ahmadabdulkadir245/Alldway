@@ -100,14 +100,14 @@ function Navigation() {
             {!openSideBar ? (
               <button className='flex lg:hidden '>
                 <MenuAlt1Icon
-                  className='h-8 text-[#093158] transition-all duration-200 ease-in-out'
+                  className='h-8 text-[#093158] transition-all duration-200 ease-in-out hover:text-[#ffcb05]'
                   onClick={open}
                 />
               </button>
             ) : (
               <button className='flex lg:hidden '>
                 <MdClear
-                  className='h-16 w-10 text-[#093158] transition-all duration-200 ease-in-out'
+                  className='h-16 w-10 text-[#093158] transition-all duration-200 ease-in-out hover:text-[#ffcb05]'
                   onClick={close}
                 />
               </button>
