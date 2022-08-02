@@ -20,6 +20,7 @@ export default function Home() {
     <div className='iceland'>
       <Head>
         <title>AllDWay Real Estate</title>
+        <meta name='ir-site-verification-token' value='-2024820355'></meta>
       </Head>
       <Main />
       <Footer />
